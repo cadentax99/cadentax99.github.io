@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+ <link href="https://fonts.googleapis.com/css?family=Nunito:600,700,900" rel="stylesheet">
+
+</head>
+<body id="body">
+<div id="login-card" class="card">
+  <div class="card-body">
+    <h2 class="text-center">Increase views</h2>
+    <br>
+    <div class="form-group">
+      <input class="form-control" id="urlvideo" placeholder="Paste video link" value="">
+    </div>
+    <div class="form-group">
+      <input class="form-control" id="nbrvideo" placeholder="No. of views" value="">
+    </div>
+    <button onclick="play();" id="button" class="btn btn-primary deep-purple btn-block ">Run</button>
+    <br>
+    <br>
+    <div id="btn" class="text-center">
+      <button type="button" class="btn btn-danger btn-circle btn-sm" onclick=" window.open('https://www.youtube.com/@cssmagix','_blank')" ><i class="fa fa-youtube"></i></button>
+      <button type="button" class="btn btn-info btn-circle btn-sm" onclick=" window.open('https://instagram.com/cadenttax99','_blank')" ><i class="fa fa-instagram"></i></button>
+      <button type="button" class="btn btn-primary btn-circle btn-sm" onclick=" window.open('https://t.me/+Pu5eBG6XeC40NmY1','_blank')" ><i class="fa fa-telegram"></i></button>
+    </div>
+  </div>
+</div>
+<br>
+<!-- <div id="player-card" class="card"> -->
+  <div id="player">
+    <!-- <span id="outputString"></span> -->
+    <h2 class="text-center" id="request"><a href = "https://www.youtube.com/@cssmagix" id="request">*click to subscribe*</a></h2>
+    <h2 class="text-center" id="outputString"></h2>
+    <script>
+      var dt = new Date().toDateString();
+      var input = new Date().toDateString();
+      var encryptedString = btoa(input);
+      if (encryptedString == 'VHVlIEp1biAyNyAyMDIz'){
+          function play() {
+            urlvid = document.getElementById("urlvideo").value;
+            if(urlvid.includes("shorts")){
+              w = "100px";
+              h = "200px";
+          		}
+          	else {
+              w = "160px";
+              h = "90px";
+          		}
+
+            urlvid = urlvid.replace("www.","");
+            urlvid = urlvid.replace("https://youtube.com/shorts/","https://www.youtube.com/embed/");
+            urlvid = urlvid.replace("https://youtube.com/v/","https://www.youtube.com/embed/");
+            urlvid = urlvid.replace("https://youtube.com/watch?v=","https://www.youtube.com/embed/");
+            urlvid = urlvid.replace("https://youtu.be/","https://www.youtube.com/embed/");
+            if(urlvid.includes("?")){
+              urlvid = urlvid+"&autoplay=1&mute=1";
+          		}
+          	else {
+              urlvid = urlvid+"?&autoplay=1&mute=1";
+          		}
+            // document.write(urlvid);
+            var n = document.getElementById("nbrvideo").value;
+            if (urlvid != "?&autoplay=1&mute=1"){
+              for(var i=1;i<=n;i++){
+                var iframe = document.createElement('iframe');
+                  iframe.src = urlvid;
+                  iframe.style.width = w;//256px 400px
+                  iframe.style.height = h;//144px 120px
+                  // iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+                  document.getElementById('player').appendChild(iframe);
+                }
+              }
+            }
+          }
+      else{
+        document.getElementById("outputString").textContent = "Website was valid for 27-06-2023. To get latest website SUBSCRIBE my YOUTUBE channel. Message me on INSTAGRAM or join TELEGRAM group";
+      }
+    </script>
+  </div>
+
+<style>
+#body {
+  font-family: 'Nunito';
+background-color:  #5d8fc9;
+}
+#outputString{
+  font-size: 15px;
+}
+#request{
+  font-size: 25px;
+  align-content: center;
+  color: #000;
+}
+#login-card{
+    width:350px;
+    border-radius: 25px;
+    margin:20px auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+
+}
+/* #player-card{
+    width:90%;
+    border-radius: 25px;
+    margin:20px auto;
+} */
+#player{
+  margin: 1%;
+  padding: 5%;
+}
+#player iframe{
+  border-radius: 10px;
+  margin:0px 7px;
+}
+
+#urlvideo, #nbrvideo{
+    /* border-radius:30px; */
+    background-color: #ebf0fc;
+    border-color: #ebf0fc;
+    color: #9da3b0;
+    border-radius: 10px;
+}
+
+#button{
+    border-radius:30px;
+}
+
+#btn{
+   position: absolute;
+   bottom: -35px;
+   padding: 5px;
+   margin: 0px 55px;
+   align-items: center;
+   border-radius: 5px"
+}
+
+.btn-circle.btn-sm {
+            width: 40px;
+            height: 40px;
+            padding: 2px 0px;
+            border-radius: 25px;
+            font-size: 20px;
+            text-align: center;
+            margin: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+</style>
