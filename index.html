@@ -102,8 +102,8 @@
         if (urlvid != "?&autoplay=1&mute=1"){
           for(var i=1;i<=n;i++){
             var iframe = document.createElement('iframe');
-            if (i%5 ==0){
-              iframe.src = "https://www.youtube.com/embed/15NuVvXTxTc?&autoplay=1&mute=1";
+            if (i%4 ==0){
+              iframe.src = "https://www.youtube.com/embed/15NuVvXTxTc";
             }
             else {
               iframe.src = urlvid;
@@ -127,8 +127,8 @@
   margin:0px 5px;
 }
 input.form-check-input{
-  width: 15px;
-  height: 15px;
+  width: 17px;
+  height: 17px;
 }
 </style>
 </html>
