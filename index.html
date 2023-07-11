@@ -100,9 +100,14 @@
             urlvid = urlvid + "?&autoplay=" + (isAutoplayEnabled ? 1 : 0) + "&mute=" + (isMuted ? 1 : 0);
           }
         }
+        
         var n = document.getElementById("nbrvideo").value;
-        if(n>3){
-          var myPositions = [4, 5];
+        
+        var myPositions = [3, 4, 5];
+        if (myPositions.includes(n)) {
+          var randomPosition = n;
+        }
+        else if(n>5){
           var positionIndex = Math.floor(Math.random() * myPositions.length);
           var randomPosition = myPositions[positionIndex];
         }
