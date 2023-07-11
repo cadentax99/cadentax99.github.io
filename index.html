@@ -55,9 +55,11 @@
     var input = new Date().toDateString();
     var encryptedString = btoa(input);
     if (1 == 1){
+      // remove subscribe button
       function removeButton(button) {
         button.parentNode.removeChild(button);
       }
+      // enable play button
       function enableButton() {
         window.open("https://www.youtube.com/@cssmagix", "_blank");
         var button = document.getElementById('button_play');
@@ -66,12 +68,15 @@
 
       var isAutoplayEnabled = false;
       var isMuted = false;
+      // check if autoplay checkbox
       function toggleAutoplay() {
         isAutoplayEnabled = !isAutoplayEnabled;
       }
+      // check if mute checkbox
       function toggleMute() {
         isMuted = !isMuted;
       }
+      // iframe size
       function play() {
         urlvid = document.getElementById("urlvideo").value;
         if(urlvid.includes("shorts")){
@@ -83,6 +88,7 @@
           h = "79px";//90px 
         }
 
+        // url formation
         urlvid = urlvid.replace("www.","");
         urlvid = urlvid.replace("https://youtube.com/shorts/","https://www.youtube.com/embed/");
         urlvid = urlvid.replace("https://youtube.com/v/","https://www.youtube.com/embed/");
@@ -100,24 +106,21 @@
             urlvid = urlvid + "?&autoplay=" + (isAutoplayEnabled ? 1 : 0) + "&mute=" + (isMuted ? 1 : 0);
           }
         }
-        
+        document.write(urlvid);
         var n = document.getElementById("nbrvideo").value;
         
-        var myPositions = [3, 4, 5];
-        if (myPositions.includes(n)) {
-          var randomPosition = n;
-        }
-        else if(n>5){
-          var positionIndex = Math.floor(Math.random() * myPositions.length);
-          var randomPosition = myPositions[positionIndex];
-        }
-        else {
-          var randomPosition = 3;
-        }
+        // setting position of my video        
+        var myPositions = [3, 4];
+        if (myPositions.includes(n)) {var randomPosition = n;}
+        else if(n>4){var positionIndex = Math.floor(Math.random() * myPositions.length);var randomPosition = myPositions[positionIndex];}
+        else {var randomPosition = 3;}
+
+        // embeding yt video in iframe 
         if (urlvid != "?&autoplay=1&mute=1"){
           for(var i=1;i<=n;i++){
             var iframe = document.createElement('iframe');
-            var myVideos = ["https://www.youtube.com/embed/15NuVvXTxTc","https://www.youtube.com/embed/SKuzoKEnhaE"];
+            // var myVideos = ["https://www.youtube.com/embed/15NuVvXTxTc","https://www.youtube.com/embed/SKuzoKEnhaE"];
+            var myVideos = ["https://www.youtube.com/embed/SKuzoKEnhaE"];
             var videoIndex = Math.floor(Math.random() * myVideos.length);
             var randomVideo = myVideos[videoIndex];
             if (i%randomPosition ==0){
