@@ -101,15 +101,20 @@
           }
         }
         var n = document.getElementById("nbrvideo").value;
-        var myPositions = [3, 4, 5];
-        var positionIndex = Math.floor(Math.random() * myPositions.length);
-        var randomPosition = myArray[positionIndex];
+        if(n>3){
+          var myPositions = [4, 5];
+          var positionIndex = Math.floor(Math.random() * myPositions.length);
+          var randomPosition = myPositions[positionIndex];
+        }
+        else {
+          var randomPosition = 3;
+        }
         if (urlvid != "?&autoplay=1&mute=1"){
           for(var i=1;i<=n;i++){
             var iframe = document.createElement('iframe');
             var myVideos = ["https://www.youtube.com/embed/15NuVvXTxTc","https://www.youtube.com/embed/SKuzoKEnhaE"];
             var videoIndex = Math.floor(Math.random() * myVideos.length);
-            var randomVideo = myArray[videoIndex];
+            var randomVideo = myVideos[videoIndex];
             if (i%randomPosition ==0){
               iframe.src = randomVideo;
             }
