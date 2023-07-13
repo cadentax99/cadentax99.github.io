@@ -7,8 +7,25 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:600,700,900" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+  <!-- Add Google Translate API script -->
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
+
 <body id="body" style="background-color: #5d8fc9;">
+  <!-- Add Google Translate button -->
+<div id="google_translate_element"></div>
+
+<!-- Rest of the HTML code -->
+<!-- ... -->
+
+<script>
+  // Google Translate initialization function
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
   <h2 class="text-center" id="outputString" style="font-size: 15px;"></h2>
 <div id="login-card" class="card" style="width:350px; border-radius: 25px; margin:20px auto; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); background-color: #ffffff;">
   <div class="card-body">
@@ -34,7 +51,7 @@
     <button onclick="play();" id="button_play" class="btn btn-primary deep-purple btn-block" style="border-radius: 30px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);"></i>Play</button>
 <!--     <button onclick="play();" id="button_play" class="btn btn-primary deep-purple btn-block" style="margin: 25px 0 15px 0; color: #000; background: #dde1e7; border: none; outline: none; cursor: pointer; border-radius: 30px; box-shadow: 2px 2px 5px #babecc, -5px -5px 10px #ffffff73;"><i></i>Play</button>
     <style>button:focus {color: #3498db; box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;}</style> -->
-    <button onclick="enableButton(); removeButton(this);" id="button_sub" class="btn btn-primary deep-purple btn-block" style="background-color:#c4302b; border-color: #c4302b; border-radius: 30px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);"><i class="fab fa-youtube" style="margin-right: 5px;"></i>Subscribe My Channel</button>
+    <button onclick="enableButton(); removeButton(this);" id="button_sub" class="btn btn-primary deep-purple btn-block" style="background-color:#c4302b; border-color: #c4302b; border-radius: 30px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);"><i class="fab fa-youtube" style="margin-right: 5px;"></i>Subscribe</button>
     
     <br>
     <br>
@@ -154,11 +171,13 @@
     }
   </script>
 </div>
-  <div style="padding: 5%;">
+  <div style="padding: 1%;">
     <h2 class="text-center" style="font-size: 20px; color: black; font-weight:bold;">How to Use?</h2>
-    <h2 class="text-left" style="font-size: 14px; color: black;">1. video link paste karo</h2>
-    <h2 class="text-left" style="font-size: 14px; color: black;">2. jitne views chahye wo type karo</</h2>
-    <h2 class="text-left" style="font-size: 14px; color: black;">3. play button pr click karo</h2>
+    <h2 class="text-left" style="font-size: 14px; color: black;">1. Paste video link</h2>
+    <h2 class="text-left" style="font-size: 14px; color: black;">2. Type number of views you want</</h2>
+    <h2 class="text-left" style="font-size: 14px; color: black;">3. Click on play button</h2>
+    <h2 class="text-left" style="font-size: 14px; color: black;">4. Video will play on multiple screens</h2>
+    <h2 class="text-left" style="font-size: 14px; color: black;">5. Click on video to play</h2>
     <br>
     <h2 class="text-center" style="font-size: 20px; color: black; font-weight:bold;">Suggestions</h2>
     <h2 class="text-left" style="font-size: 14px; color: black;">1. Watch video by skipping i.e. move video slider (It will make sure that you are actually watching).</h2>
@@ -175,5 +194,16 @@ input.form-check-input{
   width: 15px;
   height: 15px;
 }
+/* Custom styles for the Google Translate button */
+#google_translate_element {
+   position: relative;
+   top: 20px;
+   left: 50%;
+   transform: translateX(-50%);
+   text-align: center;
+   margin-bottom: 40px;
+   /* background-color: #5d8fc9; */
+ }
+ 
 </style>
 </html>
