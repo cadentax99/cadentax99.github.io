@@ -51,6 +51,7 @@
   <h2 class="text-left" style="font-size: 14px; color: black;">2. Don't just play video and leave.</</h2>
   <h2 class="text-left" style="font-size: 14px; color: black;">3. Paste VIDEO link (Shorts link also works but it is not that efficient).</h2>
   <script>
+    var apply_permission = true;
     var apply_removeButton = true;
     var apply_enableButton = true;
     var apply_play = true;
@@ -60,7 +61,7 @@
     var dt = new Date().toDateString();
     var input = new Date().toDateString();
     var encryptedString = btoa(input);
-    if (encryptedString == "V2VkIEp1bCAxMiAyMDIz"){
+    if (apply_permission == true){
       // remove subscribe button
       function removeButton(button) {
         if (apply_removeButton == true){
