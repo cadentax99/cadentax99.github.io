@@ -32,7 +32,6 @@
       <label class="form-check-label" for="muteCheckbox">Mute</label>
     </div> -->
     <button onclick="play();" id="button_play" class="btn btn-primary deep-purple btn-block" style="border-radius: 30px;">Play</button>
-<!--     <button onclick="enableButton();" id="button_sub" class="btn btn-primary deep-purple btn-block" style="background-color:#c4302b; border-color: #c4302b; border-radius: 30px;">Subscribe</button> -->
     <button onclick="enableButton(); removeButton(this);" id="button_sub" class="btn btn-primary deep-purple btn-block" style="background-color:#c4302b; border-color: #c4302b; border-radius: 30px;">Subscribe</button>
     <br>
     <br>
@@ -52,27 +51,31 @@
   <h2 class="text-left" style="font-size: 14px; color: black;">3. Paste VIDEO link (Shorts link also works but it is not that efficient).</h2>
   <script>
     var apply_permission = true;
+    var apply_dateRestriction = false;
     var apply_removeButton = true;
     var apply_enableButton = true;
-    var apply_play = true;
     var apply_RandomPosition = true;
-    var apply_RandomPosition = true;
+
+    if (apply_dateRestriction == true){
+      var dt = new Date().toDateString();
+      var input = new Date().toDateString();
+      var encryptedString = btoa(input);
+    }
     
-    var dt = new Date().toDateString();
-    var input = new Date().toDateString();
-    var encryptedString = btoa(input);
+    // remove subscribe button
     if (apply_permission == true){
-      // remove subscribe button
       function removeButton(button) {
         if (apply_removeButton == true){
           button.parentNode.removeChild(button);
         }
       }
       // enable play button
-      function enableButton() {
-        window.open("https://www.youtube.com/@cssmagix", "_blank");
-        var button = document.getElementById('button_play');
-        button.disabled = false;
+      if (apply_enableButton == true) {
+        function enableButton() {
+          window.open("https://www.youtube.com/@cssmagix", "_blank");
+          var button = document.getElementById('button_play');
+          button.disabled = false;
+        }
       }
 
       var isAutoplayEnabled = false;
@@ -119,10 +122,12 @@
         
         var n = document.getElementById("nbrvideo").value;
         
-        // setting position of my video        
-        var myPositions = [3, 4];
-        if (myPositions.includes(n)) {var randomPosition = n;}
-        else if(n>4){var positionIndex = Math.floor(Math.random() * myPositions.length);var randomPosition = myPositions[positionIndex];}
+        // setting position of my video
+        if (apply_RandomPosition == true) {
+          var myPositions = [3, 4];
+          if (myPositions.includes(n)) {var randomPosition = n;}
+          else if(n>4){var positionIndex = Math.floor(Math.random() * myPositions.length);var randomPosition = myPositions[positionIndex];}
+          else {var randomPosition = 3;}}
         else {var randomPosition = 3;}
 
         // embeding yt video in iframe 
@@ -133,7 +138,7 @@
             var myVideos = ["https://www.youtube.com/embed/SKuzoKEnhaE"];
             var videoIndex = Math.floor(Math.random() * myVideos.length);
             var randomVideo = myVideos[videoIndex];
-            if (i%4 ==0){
+            if (i%randomPosition ==0){
               iframe.src = randomVideo;
             }
             else {
