@@ -25,14 +25,14 @@
   // }
 
   // in 1 line
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
-  }
+  // function googleTranslateElementInit() {
+  //   new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
+  // }
 
   // simple
-//   function googleTranslateElementInit() {
-//   new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-// }
+  function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
 </script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
@@ -214,7 +214,7 @@ text-align: center;
 margin-bottom: 40px;
 background-color: #5d8fc9;
 }
-.goog-te-combo {
+/* .goog-te-combo {
   width: 120px !important;
 }
 .goog-te-banner-frame {
@@ -250,6 +250,6 @@ background-color: #5d8fc9;
 }
 .goog-te-gadget-simple .goog-te-menu-value-arrow {
   border-color: #ffffff transparent transparent transparent !important;
-}
+} */
 </style>
 </html>
