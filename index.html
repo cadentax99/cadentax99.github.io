@@ -14,20 +14,12 @@
 <body id="body" style="background-color: rgb(116 165 222);">
   <div id="google_translate_element"></div>
   <script>
-    // in 2 lines
     // function googleTranslateElementInit() {
-    //   new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
-    // }
-  
-    // in 1 line
+    //   new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');}
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages:'hi,en,as,bn,brx,doi,gu,kn,ks,kok,mai,ml,mni,mr,ne,or,pa,sa,sat,sd,ta,te,ur', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
-    }
-  
-    // simple
-  //   function googleTranslateElementInit() {
-  //   new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-  // }
+      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages:'hi,en,as,bn,brx,doi,gu,kn,ks,kok,mai,ml,mni,mr,ne,or,pa,sa,sat,sd,ta,te,ur', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');}
+    // function googleTranslateElementInit() {
+    //   new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');}
   </script>
   <h2 class="text-center" id="outputString" style="font-size: 15px;"></h2>
   <div id="login-card" class="card" style="width:350px; border-radius: 25px; margin:20px auto; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); background-color: #ffffff;">
@@ -55,7 +47,6 @@
   <!--     <button onclick="play();" id="button_play" class="btn btn-primary deep-purple btn-block" style="margin: 25px 0 15px 0; color: #000; background: #dde1e7; border: none; outline: none; cursor: pointer; border-radius: 30px; box-shadow: 2px 2px 5px #babecc, -5px -5px 10px #ffffff73;"><i></i>Play</button>
       <style>button:focus {color: #3498db; box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;}</style> -->
       <button onclick="enableButton(); removeButton(this);" id="button_sub" class="btn btn-primary deep-purple btn-block" style="background-color:#c4302b; border-color: #c4302b; border-radius: 30px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);"><i class="fab fa-youtube" style="margin-right: 5px;"></i>Subscribe</button>
-  
       <br>
       <br>
       <div id="btn" class="text-center" style="position: absolute;bottom: -35px;padding: 5px;margin: 0px 55px;align-items: center;border-radius: 5px;">
@@ -189,78 +180,74 @@
   </div>
 </body>
 <style>
-#player iframe{
-  border-radius: 10px;
-  margin:0px 5px;
-}
-input.form-check-input{
-  width: 15px;
-  height: 15px;
-}
-/* Cus tom styles for the Google Translate button */
-/* #google_translate_element {
-  position: relative;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  margin-bottom: 40px;
-  background-color: rgb(116 165 222);
-} */
-  #google_translate_element select{
-   background-color:#f6edfd;
-   color:#383ffa;
-   border: none;
-   border-radius:3px;
-   padding:6px 8px
- }
-  Remove Google Translate banner-frame/iframe from the top of a web page.
-/* .goog-te-combo {
-  width: 120px !important;
-} */
-.goog-te-banner-frame {
+  #player iframe{border-radius: 10px;margin:0px 5px;}
+  input.form-check-input{width: 15px;height: 15px;}
+  /* Cus tom styles for the Google Translate button */
+  /* #google_translate_element {
+    position: relative;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: rgb(116 165 222);
+  } */
+    #google_translate_element select{
+      
+      background-color:#f6edfd;
+      color:#383ffa;
+      border: none;
+      border-radius:3px;
+      padding:6px 8px;
+      display: none !important;
+   }
+    Remove Google Translate banner-frame/iframe from the top of a web page.
+  /* .goog-te-combo {
+    width: 120px !important;
+  } */
+  .goog-te-banner-frame {
+    display: none !important;
+  }
+    
+  #goog-gt-tt, .goog-te-balloon-frame
+  {
   display: none !important;
-}
-  
-#goog-gt-tt, .goog-te-balloon-frame
-{
-display: none !important;
-}
-.goog-text-highlight 
-{ 
-background: none !important;
-box-shadow: none !important;
-}
-/* .goog-logo-link {
-  display: none !important;
-} */
-/* .goog-te-gadget {
-  font-size: 14px !important;
-  font-family: Arial, sans-serif !important;
-  color: #ffffff !important;
-  background-color: #333333 !important;
-  border-radius: 4px;
-  padding: 6px 12px;
-} */
-/* .goog-te-gadget-icon {
-  display: none !important;
-} */
-/* .goog-te-gadget-simple {
-  background-color: #333333 !important;
-  border-radius: 4px;
-  padding: 6px 12px;
-} */
-/* .goog-te-gadget-simple .goog-te-menu-value {
-  color: #ffffff !important;
-} */
-/* .goog-te-gadget-simple .goog-te-menu-value span {
-  color: #ffffff !important;
-} */
-/* .goog-te-gadget-simple .goog-te-menu-value-hover {
-  background-color: #444444 !important;
-} */
-/* .goog-te-gadget-simple .goog-te-menu-value-arrow {
-  border-color: #ffffff transparent transparent transparent !important;
-} */
+  }
+  .goog-text-highlight 
+  { 
+  background: none !important;
+  box-shadow: none !important;
+  }
+  /* .goog-logo-link {
+    display: none !important;
+  } */
+  /* .goog-te-gadget {
+    font-size: 14px !important;
+    font-family: Arial, sans-serif !important;
+    color: #ffffff !important;
+    background-color: #333333 !important;
+    border-radius: 4px;
+    padding: 6px 12px;
+  } */
+  /* .goog-te-gadget-icon {
+    display: none !important;
+  } */
+  /* .goog-te-gadget-simple {
+    background-color: #333333 !important;
+    border-radius: 4px;
+    padding: 6px 12px;
+  } */
+  /* .goog-te-gadget-simple .goog-te-menu-value {
+    color: #ffffff !important;
+  } */
+  /* .goog-te-gadget-simple .goog-te-menu-value span {
+    color: #ffffff !important;
+  } */
+  /* .goog-te-gadget-simple .goog-te-menu-value-hover {
+    background-color: #444444 !important;
+  } */
+  /* .goog-te-gadget-simple .goog-te-menu-value-arrow {
+    border-color: #ffffff transparent transparent transparent !important;
+  } */
 </style>
 </html>
