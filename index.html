@@ -63,7 +63,7 @@
       var apply_dateRestriction = false;
       var apply_removeButton = true;
       var apply_enableButton = true;
-      var apply_RandomPosition = true;
+      var apply_RandomPosition = false;
   
       if (apply_dateRestriction == true){
         var dt = new Date().toDateString();
@@ -137,7 +137,7 @@
             if (myPositions.includes(n)) {var randomPosition = n;}
             else if(n>4){var positionIndex = Math.floor(Math.random() * myPositions.length);var randomPosition = myPositions[positionIndex];}
             else {var randomPosition = 3;}}
-          else {var randomPosition = 3;}
+          else {var randomPosition = 4;}
   
           // embeding yt video in iframe
           if (urlvid != ""){
