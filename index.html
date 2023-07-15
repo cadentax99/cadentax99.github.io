@@ -30,10 +30,10 @@
       <h2 class="text-center" style="font-size: 13px; color: grey;">updated on 14th July 2023</h2>
       <br>
       <div class="form-group">
-        <input class="form-control" id="urlvideo" placeholder="Paste video link" value="" style="background-color: #ebf0fc; border-color: #ebf0fc; color: #9da3b0; border-radius: 10px; display: flex; position: relative; outline: none; border: none; box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;">
+        <input class="form-control" id="urlvideo" placeholder="video link" value="" style="background-color: #ebf0fc; border-color: #ebf0fc; color: #9da3b0; border-radius: 10px; display: flex; position: relative; outline: none; border: none; box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;">
       </div>
       <div class="form-group">
-        <input class="form-control" id="nbrvideo" placeholder="No. of views" value="8" style="background-color: #ebf0fc; border-color: #ebf0fc; color: #9da3b0; border-radius: 10px; display: flex; position: relative; outline: none; border: none; box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;">
+        <input class="form-control" id="nbrvideo" placeholder="views" value="4" style="background-color: #ebf0fc; border-color: #ebf0fc; color: #9da3b0; border-radius: 10px; display: flex; position: relative; outline: none; border: none; box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;">
       </div>
   <!--     <div class="form-group form-check" style="margin-left: 10px;">
         <input type="checkbox" class="form-check-input" id="autoplayCheckbox" onchange="toggleAutoplay()" style="height: 15px;">
@@ -182,15 +182,16 @@
 <style>
   #player iframe{border-radius: 10px;margin:0px 5px;}
   input.form-check-input{width: 15px;height: 15px;}
-  /* #google_translate_element {
-    position: relative;
-    top: 20px;
+  #google_translate_element {
+    position: fixed;
+    top: 0px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    margin-bottom: 40px;
+/*     margin-bottom: 40px; */
     background-color: rgb(116 165 222);
-  } */
+    z-index:99999;
+  }
     #google_translate_element select{
       width: 175px;
       background-color:#f6edfd;
