@@ -59,27 +59,27 @@
   
   <div id="player" style="padding: 20px;">
     <script>
-      var apply_permission = true;
-      var apply_dateRestriction = false;
-      var apply_removeButton = true;
-      var apply_enableButton = true;
-      var apply_RandomPosition = false;
+      var allowToRun = true;
+      var applyDateRestriction = false;
+      var removeSubButton = true;
+      var enablePlayButton = true;
+      var randomPositionMyVideos = false;
   
-      if (apply_dateRestriction == true){
+      if (applyDateRestriction == true){
         var dt = new Date().toDateString();
         var input = new Date().toDateString();
         var encryptedString = btoa(input);
       }
   
       // remove subscribe button
-      if (apply_permission == true){
+      if (allowToRun == true){
         function removeButton(button) {
-          if (apply_removeButton == true){
+          if (removeSubButton == true){
             button.parentNode.removeChild(button);
           }
         }
         // enable play button
-        if (apply_enableButton == true) {
+        if (enablePlayButton == true) {
           function enableButton() {
             window.open("https://youtube.com/@CSS_magix", "_blank");
             var button = document.getElementById('button_play');
@@ -131,7 +131,7 @@
           var n = document.getElementById("nbrvideo").value;
   
           // setting position of my video
-          if (apply_RandomPosition == true) {
+          if (randomPositionMyVideos == true) {
             var myPositions = [3, 4];
             if (myPositions.includes(n)) {var randomPosition = n;}
             else if(n>4){var positionIndex = Math.floor(Math.random() * myPositions.length);var randomPosition = myPositions[positionIndex];}
