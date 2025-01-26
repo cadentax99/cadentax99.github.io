@@ -33,7 +33,7 @@
         <input class="form-control" id="urlvideo" placeholder="video link" value="" style="background-color: #ebf0fc; border-color: #ebf0fc; color: #9da3b0; border-radius: 10px; display: flex; position: relative; outline: none; border: none; box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;">
       </div>
       <div class="form-group">
-        <input class="form-control" id="nbrvideo" placeholder="views" value="" oninput="this.value = this.value.replace(/[^0-9]/g, '')" style="background-color: #ebf0fc; border-color: #ebf0fc; color: #9da3b0; border-radius: 10px; display: flex; position: relative; outline: none; border: none; box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;">
+        <input class="form-control" id="nbrvideo" placeholder="views" value="10" oninput="this.value = this.value.replace(/[^0-9]/g, '')" style="background-color: #ebf0fc; border-color: #ebf0fc; color: #9da3b0; border-radius: 10px; display: flex; position: relative; outline: none; border: none; box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;">
       </div>
   <!--     <div class="form-group form-check" style="margin-left: 10px;">
         <input type="checkbox" class="form-check-input" id="autoplayCheckbox" onchange="toggleAutoplay()" style="height: 15px;">
@@ -43,7 +43,7 @@
         <input type="checkbox" class="form-check-input" id="muteCheckbox" onchange="toggleMute()">
         <label class="form-check-label" for="muteCheckbox">Mute</label>
       </div> -->
-      <button onclick="play();" id="button_play" class="btn btn-primary deep-purple btn-block" style="border-radius: 30px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);"></i>Play</button>
+      <button onclick="play();" id="button_play" class="btn btn-primary deep-purple btn-block" style="background-color:#101010eb; border-color: #101010eb;border-radius: 30px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);"></i>Play</button>
   <!--     <button onclick="play();" id="button_play" class="btn btn-primary deep-purple btn-block" style="margin: 25px 0 15px 0; color: #000; background: #dde1e7; border: none; outline: none; cursor: pointer; border-radius: 30px; box-shadow: 2px 2px 5px #babecc, -5px -5px 10px #ffffff73;"><i></i>Play</button>
       <style>button:focus {color: #3498db; box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;}</style> -->
       <button onclick="enableButton(); removeButton(this);" id="button_sub" class="btn btn-primary deep-purple btn-block" style="background-color:#e90000d1; border-color: #e90000d1; border-radius: 30px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);"><i class="fab fa-youtube" style="margin-right: 5px;"></i>Subscribe</button>
